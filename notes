@@ -1,0 +1,26 @@
+cargo:
+===
+
+- `cargo new something` creates a binary package
+- `cargo build` compiles the code and makes an executable
+- `cargo check` compiles code but doesn't produce executable
+- `cargo run` runs the binary, if present, or compiles and runs the executable
+- binaries are saved in project/target/debug (when run without the release flag)
+- `cargo build --release` compiles the program with optimization. the
+  executables is stored project/target/releases
+- `cargo update` updates the crates in the local project
+
+rust:
+===
+
+rust does not convert int or other types to bool like C.
+char literals are denoted using single quotes whilst string literals are denoted
+by double quotes.
+String are not hashable.
+
+Result enum:
+- Has Ok or Err
+- Err contains the error returned by the method, if any
+- Ok contains the value returned by the method
+- Rust handles error using the Result enum. it does not have a try and expect
+  like other langs do
