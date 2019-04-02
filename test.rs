@@ -1,6 +1,4 @@
 fn main() {
-    let path = std::env::var("HOME")
-        .unwrap_or("");
-
-    println!("{}", path);
+    let haha  = (-1_i64).pow(0 as u32);
+    println!("{}", haha);
 }

@@ -1,19 +1,19 @@
 use std::time::{SystemTime, UNIX_EPOCH};
 
-static mut rand: u64 = 1;
+static mut rand: u128 = 1;
 
-fn get_time() -> u64 {
+fn get_time() -> u128 {
     SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .expect("lmao")
-        .subsec_micros() as u64
+        .as_nanos()
 }
 
 unsafe fn randi() {
-    let a: u64 = get_time();
+    let a: u128 = get_time();
 
-    let c: u64 = get_time() % 6;
-    let m: u64 = 2_u64.pow((get_time() % 50) as u32) + rand / 3;
+    let c: u128 = get_time() % 6;
+    let m: u128 = 2_u128.pow((get_time() % 50) as u32) + rand / 3;
 
     rand = (a * rand + c) % m
 }
